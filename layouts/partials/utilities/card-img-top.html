@@ -1,0 +1,5 @@
+<div class="image-container">
+    {{ with resources.Get . }}
+        <img class="" src="{{ .Permalink }}" alt="{{ .Title }}" style="width: 200px; height: 200px;">
+    {{ end }}
+</div>

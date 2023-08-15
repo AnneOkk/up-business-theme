@@ -1,0 +1,13 @@
+{{ define "main" }}
+  {{ with .Site.Data.home.hero }}{{ partial "sections/hero.html" . }}{{ end }}
+  {{ with .Site.Data.home.contrib }}{{ partial "sections/contrib.html" . }}{{ end }}
+  {{ with .Site.Data.home.gap }}{{ partial "sections/contrib.html" . }}{{ end }}
+  {{ with .Site.Data.home.medtechfest }}{{ partial "sections/medtechfest.html" . }}{{ end }}
+  {{ with .Site.Data.home.detailsfest }}{{ partial "sections/detailsfest.html" . }}{{ end }}
+  {{ with .Site.Data.home.gap }}{{ partial "sections/contrib.html" . }}{{ end }}
+  {{ with .Site.Data.home.medtechtalk }}{{ partial "sections/medtechtalk.html" . }}{{ end }}
+  {{ with .Site.Data.home.gap }}{{ partial "sections/contrib.html" . }}{{ end }}
+  {{ with .Site.Data.home.team }}{{ partial "sections/team.html" . }}{{ end }}
+  {{ with .Site.Data.home.gap }}{{ partial "sections/contrib.html" . }}{{ end }}
+  {{ with .Site.Data.home.cta }}{{ partial "sections/cta.html" . }}{{ end }}
+{{ end }}
