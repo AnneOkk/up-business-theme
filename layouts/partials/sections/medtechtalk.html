@@ -18,11 +18,17 @@
         {{ with .text }}
           <p class="text-black-61 pb-3">{{ . }}</p>
         {{ end }}
-        <div class="">
-          {{ range .buttons }}
-            <a class="text-decoration-none me-3" href="{{ .url }}">{{ .label }}</a>
-          {{ end }}
-        </div>
+      <div>
+        {{ range .buttons }}
+          <a class="btnnew" href="{{ .url }}">
+            {{ if .image }}
+               <img src="{{ .image }}" alt="{{ .label }} Icon" class="button-img">
+            {{ else }}
+              {{ .label }} 
+            {{ end }}
+          </a>
+        {{ end }}
+      </div>
       </div>
     </div>
     {{ end }}

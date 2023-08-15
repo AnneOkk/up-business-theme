@@ -46,5 +46,18 @@
       {{ end }}
     </div>
   </div>
+  <div class="row justify-content-center pb-5">
+      <div class="col-12 col-xl-6 text-center">
+        {{ range .content.buttons }}
+          <a class="btnnew" href="{{ .url }}">
+            {{ if .image }}
+               <img src="{{ .image }}" alt="{{ .label }} Icon" class="button-img">
+            {{ else }}
+              {{ .label }} 
+            {{ end }}
+          </a>
+        {{ end }}
+      </div>
+    </div>
 </section>
 </div>

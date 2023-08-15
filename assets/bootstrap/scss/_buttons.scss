@@ -55,6 +55,59 @@
 // Alternate buttons
 //
 
+.btnnew {
+  display: inline-block;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color: $body-color;
+  text-align: center;
+  text-decoration: if($link-decoration == none, null, none);
+  white-space: $btn-white-space;
+  vertical-align: middle;
+  cursor: if($enable-button-pointers, pointer, null);
+  user-select: none;
+  background-color: transparent;  /* Change this to your desired background color */
+  border: $btn-border-width solid #000; /* Change 'transparent' to desired border color */
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+  @include transition($btn-transition);
+
+  &:hover {
+    color: $body-color;
+    text-decoration: if($link-hover-decoration == underline, none, null);
+    background-color: #7C76BB; /* Change this to your desired hover background color */
+    border-color: #fff; /* Change this to your desired hover border color */
+  }
+
+  .btn-check:focus + &,
+  &:focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+    border-color: #fff; /* Change this to your desired focus border color */
+  }
+
+  .btn-check:checked + &,
+
+  .btn-check:active + &,
+  &:active,
+  &.active {
+    @include box-shadow($btn-active-box-shadow);
+    border-color: #fff; /* Change this to your desired active border color */
+
+    &:focus {
+      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    pointer-events: none;
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+}
+
 // scss-docs-start btn-variant-loops
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
@@ -108,4 +161,9 @@
 
 .btn-sm {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+}
+
+.button-img {
+  width: 20px;   /* adjust as needed */
+  height: auto;  /* to maintain the aspect ratio */
 }
